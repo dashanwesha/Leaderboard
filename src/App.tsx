@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Leaderboard from './components/Leaderboard';
-import AddScorePopup from './components/AddScorePopup';
 import { useDispatch, useSelector } from 'react-redux';
 import { setInitialScores, addScore } from './redux/leaderboardSlice';
 import { RootState } from './redux/store';
+import Leaderboard from './components/Leaderboard';
+import AddScorePopup from './components/AddScorePopup';
 import scores from './assets/scores.json';
 import Logo from '../Logo.svg';
+
 
 const App: React.FC = () => {
   const [isPopupOpen, setPopupOpen] = useState(false);
@@ -50,7 +51,6 @@ const App: React.FC = () => {
       <Leaderboard highlightedScore={highlightedScore} />
       <button onClick={() => setPopupOpen(true)}>Add Score</button>
       {isPopupOpen && <AddScorePopup onAddScore={handleAddScore} onClose={() => setPopupOpen(false)} />}
-
       <footer>
         <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad laudantium iusto quasi incidunt excepturi labore dolorum. Magni nam aliquid autem exercitationem repellendus unde, doloribus esse aliquam, iure similique dolores corrupti!</h4>
       </footer>
