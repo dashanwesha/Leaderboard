@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface Score {
+  id: number;
   username: string;
   time: string; // MM:SS:MS format
 }
